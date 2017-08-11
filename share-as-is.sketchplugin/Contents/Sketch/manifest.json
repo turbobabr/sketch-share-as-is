@@ -10,19 +10,12 @@
       "identifier": "copyToClipboard",
       "shortcut": "control option c",
       "script": "plugin.js"
-    },
-    {
-      "name": "Settings...",
-      "identifier": "settings",
-      "script": "plugin.js"
     }
   ],
   "menu": {
     "title": "Share As Is!",
     "items": [
-      "copyToClipboard",
-      "-",
-      "settings"
+      "copyToClipboard"
     ]
   },
   "version": "1.0.0",

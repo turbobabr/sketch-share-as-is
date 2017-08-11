@@ -65,11 +65,56 @@ var exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _lodash = __webpack_require__(1);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var Utils = {};
+
+Utils.normalizeObject = function (obj) {
+  if (!obj) {
+    return null;
+  }
+
+  if (obj.isKindOfClass(NSString)) {
+    return obj.UTF8String();
+  } else if (obj.isKindOfClass(NSValue)) {
+    return obj + 0;
+  } else if (obj.isKindOfClass(NSDictionary)) {
+    return _lodash2['default'].fromPairs(_lodash2['default'].map(obj, function (value, key) {
+      return [key, Utils.normalizeObject(value)];
+    }));
+  } else if (obj.isKindOfClass(NSArray)) {
+    return _lodash2['default'].map(obj, function (value) {
+      return Utils.normalizeObject(value);
+    });
+  }
+
+  return obj;
+};
+
+Utils.normalize = function (obj) {
+  // Alias for `normalizeObject`
+  return Utils.normalizeObject(obj);
+};
+
+exports['default'] = Utils;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -17158,10 +17203,24 @@ var exports =
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(6)(module)))
 
 /***/ }),
-/* 1 */
+/* 2 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var Commands = exports.Commands = {
+  CopyToClipboard: 'copyToClipboard',
+  Settings: 'settings'
+};
+
+var UUIDKey = exports.UUIDKey = 'com.turbobabr.share-as-is.uuid';
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.1
@@ -18363,7 +18422,7 @@ else {
 
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {
@@ -18394,11 +18453,11 @@ exports['default'] = function (context) {
   }
 };
 
-var _utils = __webpack_require__(3);
+var _utils = __webpack_require__(0);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _constants = __webpack_require__(6);
+var _constants = __webpack_require__(2);
 
 var _sound = __webpack_require__(7);
 
@@ -18411,52 +18470,7 @@ var _analytics = __webpack_require__(11);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _lodash = __webpack_require__(0);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var Utils = {};
-
-Utils.normalizeObject = function (obj) {
-  if (!obj) {
-    return null;
-  }
-
-  if (obj.isKindOfClass(NSString)) {
-    return obj.UTF8String();
-  } else if (obj.isKindOfClass(NSValue)) {
-    return obj + 0;
-  } else if (obj.isKindOfClass(NSDictionary)) {
-    return _lodash2['default'].fromPairs(_lodash2['default'].map(obj, function (value, key) {
-      return [key, Utils.normalizeObject(value)];
-    }));
-  } else if (obj.isKindOfClass(NSArray)) {
-    return _lodash2['default'].map(obj, function (value) {
-      return Utils.normalizeObject(value);
-    });
-  }
-
-  return obj;
-};
-
-Utils.normalize = function (obj) {
-  // Alias for `normalizeObject`
-  return Utils.normalizeObject(obj);
-};
-
-exports['default'] = Utils;
-
-/***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 var g;
@@ -18483,7 +18497,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18509,20 +18523,6 @@ module.exports = function(module) {
 	return module;
 };
 
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var Commands = exports.Commands = {
-  CopyToClipboard: 'copyToClipboard',
-  Settings: 'settings'
-};
-
-var UUIDKey = exports.UUIDKey = 'com.turbobabr.share-as-is.uuid';
 
 /***/ }),
 /* 7 */
@@ -18565,7 +18565,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _lodash = __webpack_require__(0);
+var _lodash = __webpack_require__(1);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -18573,13 +18573,13 @@ var _sketchColor = __webpack_require__(9);
 
 var _sketchColor2 = _interopRequireDefault(_sketchColor);
 
-var _tinycolor = __webpack_require__(1);
+var _tinycolor = __webpack_require__(3);
 
 var _tinycolor2 = _interopRequireDefault(_tinycolor);
 
 var _sketchConstants = __webpack_require__(10);
 
-var _utils = __webpack_require__(3);
+var _utils = __webpack_require__(0);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -18741,7 +18741,7 @@ exports.tinycolor = undefined;
 exports.default = color;
 exports.colorFromRatio = colorFromRatio;
 
-var _tinycolor = __webpack_require__(1);
+var _tinycolor = __webpack_require__(3);
 
 var _tinycolor2 = _interopRequireDefault(_tinycolor);
 
@@ -18920,7 +18920,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logEvent = undefined;
 
-var _constants = __webpack_require__(6);
+var _constants = __webpack_require__(2);
 
 var logEvent = exports.logEvent = function logEvent(event, props) {
   var uuid = NSUserDefaults.standardUserDefaults().objectForKey(_constants.UUIDKey);
@@ -18963,5 +18963,4 @@ var logEvent = exports.logEvent = function logEvent(event, props) {
     exports[key](context);
   }
 }
-that['onRun'] = run.bind(this, 'default');
 that['onRun'] = run.bind(this, 'default')
