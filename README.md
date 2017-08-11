@@ -4,7 +4,7 @@ This [SketchApp](https://sketchapp.com/) plugin allows to quickly copy selected 
 
 ## Installation
 
-1. Download [share-as-is.sketchplugin.zip](https://github.com/turbobabr/share-as-is/releases/download/v1.0.0/share-as-is.sketchplugin.zip) archive with the plugin.
+1. Download [share-as-is.sketchplugin.zip](https://github.com/turbobabr/sketch-share-as-is/releases/download/v1.0.0/share-as-is.sketchplugin.zip) archive with the plugin.
 2. Un-zip downloaded archive and double-click `share-as-is.sketchplugin` file to install.
 
 ## Usage
@@ -20,7 +20,7 @@ Select certain artboards you want to copy to the clipboard and hit `control-opti
 
 ## Feedback
 
-If you discover any issue or have any suggestions, please [open an issue](https://github.com/turbobabr/share-as-is/issues) or find me on twitter [@turbobabr](http://twitter.com/turbobabr).
+If you discover any issue or have any suggestions, please [open an issue](https://github.com/turbobabr/sketch-share-as-is/issues) or find me on twitter [@turbobabr](http://twitter.com/turbobabr).
 
 ## License
 
