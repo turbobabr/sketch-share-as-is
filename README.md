@@ -9,7 +9,7 @@ This [SketchApp](https://sketchapp.com/) plugin allows to quickly copy selected 
 
 ## Usage
 
-Select certain artboards you want to copy to the clipboard and hit `control-options-c` shortcut. To copy the entire page "as is", just deselect currently selected layers and use the same shortcut:
+Select certain artboards you want to copy to the clipboard and hit `control-option-c` shortcut. To copy the entire page "as is", just deselect currently selected layers and use the same shortcut:
 
 ![Share As Is Demo](docs/share-as-is-demo.gif?raw=true)
 
