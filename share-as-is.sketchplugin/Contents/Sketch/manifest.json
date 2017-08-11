@@ -1,0 +1,33 @@
+{
+  "name": "Share As Is!",
+  "identifier": "com.turbobabr.sketch.share-as-is",
+  "author": "Andrey Shakhmin",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Copy to Clipboard",
+      "identifier": "copyToClipboard",
+      "shortcut": "control option c",
+      "script": "plugin.js"
+    },
+    {
+      "name": "Settings...",
+      "identifier": "settings",
+      "script": "plugin.js"
+    }
+  ],
+  "menu": {
+    "title": "Share As Is!",
+    "items": [
+      "copyToClipboard",
+      "-",
+      "settings"
+    ]
+  },
+  "version": "1.0.0",
+  "description": "Quickly copy to clipboard and share artboards the way they look in Sketch itself, with titles, borders and backgrounds.",
+  "homepage": "https://github.com/turbobabr/sketch-share-as-is#readme",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com/turbobabr/sketch-share-as-is/master/.appcast.xml"
+}
