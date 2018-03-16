@@ -7,7 +7,6 @@ import rasterize from './rasterize';
 import { logEvent } from './analytics';
 
 export default function (context) {
-
   switch(Utils.normalize(context.command.identifier())) {
     case Commands.CopyToClipboard:
       let image = rasterize(context.document,context.selection);

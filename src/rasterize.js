@@ -74,7 +74,6 @@ const rasterize = (document,selection,options = {}) => {
     }
 
     artboards = page.artboards();
-
   } else {
     const originalArtboards = selection.valueForKeyPath('@distinctUnionOfObjects.parentArtboard');
     const shadowArtboards = [];
@@ -122,7 +121,7 @@ const rasterize = (document,selection,options = {}) => {
   request.shouldTrim = false;
   request.format = ExportOptionsFormat.PNG;
   request.immutableDocument = documentData.immutableModelObject();
-  request.immutablePage = page.immutableModelObject();
+  request.rootLayer = page.immutableModelObject();
   request.includeArtboardBackground = true;
 
   if(exportSelectedLayersOnly) {

@@ -18443,7 +18443,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports['default'] = function (context) {
-
   switch (_utils2['default'].normalize(context.command.identifier())) {
     case _constants.Commands.CopyToClipboard:
       var image = (0, _rasterize2['default'])(context.document, context.selection);
@@ -18720,7 +18719,7 @@ var rasterize = function rasterize(document, selection) {
   request.shouldTrim = false;
   request.format = _sketchConstants.ExportOptionsFormat.PNG;
   request.immutableDocument = documentData.immutableModelObject();
-  request.immutablePage = page.immutableModelObject();
+  request.rootLayer = page.immutableModelObject();
   request.includeArtboardBackground = true;
 
   if (exportSelectedLayersOnly) {
