@@ -17,7 +17,7 @@
       "copyToClipboard"
     ]
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quickly copy to clipboard and share artboards the way they look in Sketch itself, with titles, borders and backgrounds.",
   "homepage": "https://github.com/turbobabr/sketch-share-as-is#readme",
   "name": "Share As Is!",
