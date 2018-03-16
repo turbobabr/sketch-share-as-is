@@ -4,7 +4,7 @@ This [SketchApp](https://sketchapp.com/) plugin allows to quickly copy selected 
 
 ## Installation
 
-1. Download [share-as-is.sketchplugin.zip](https://github.com/turbobabr/sketch-share-as-is/releases/download/v1.0.0/share-as-is.sketchplugin.zip) archive with the plugin.
+1. Download [share-as-is.sketchplugin.zip](https://github.com/turbobabr/sketch-share-as-is/releases/download/v1.0.1/share-as-is.sketchplugin.zip) archive with the plugin.
 2. Un-zip downloaded archive and double-click `share-as-is.sketchplugin` file to install.
 
 ## Usage
