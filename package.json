@@ -2,10 +2,11 @@
   "name": "sketch-share-as-is",
   "version": "1.0.0",
   "description": "Quickly copy to clipboard and share artboards the way they look in Sketch itself, with titles, borders and backgrounds.",
-  "main": "index.js",
   "scripts": {
-    "build": "skpm build",
-    "publish": "skpm publish"
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
   },
   "repository": {
     "type": "git",
@@ -18,14 +19,15 @@
   },
   "homepage": "https://github.com/turbobabr/sketch-share-as-is#readme",
   "skpm": {
+    "name": "Share As Is!",
     "manifest": "src/manifest.json",
-    "main": "share-as-is.sketchplugin"
-  },
-  "engines": {
-    "sketch": ">=3.0"
+    "main": "share-as-is.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
   },
   "devDependencies": {
-    "skpm": "^0.10.3"
+    "@skpm/builder": "^0.4.0"
   },
   "dependencies": {
     "lodash": "^4.17.4",
