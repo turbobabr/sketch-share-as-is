@@ -15,6 +15,9 @@ Select certain artboards you want to copy to the clipboard and hit `control-opti
 
 ## Version history
 
+**Share As Is! 1.0.1: 3/16/2018**
+* Sketch 49 support
+
 **Share As Is! 1.0.0: 8/11/2017**
 * First version
 
